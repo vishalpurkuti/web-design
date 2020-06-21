@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='test.css'>
+    <style>
+        .gallery_container {
+
+            width: 100%;
+            height: 600px;
+            margin: 0 auto;
+            box-sizing: border-box;
+
+        }
+
+        #gallery_display {
+            background-color: #262626;
+            height: 500px;
+            box-sizing: border-box;
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.5s linear;
+
+        }
+
+        .preview {
+
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+
+            text-align: center;
+        }
+
+        .preview button {
+            text-align: center;
+            width: 150px;
+            box-sizing: border-box;
+            margin: 20px;
+            height: 60px;
+            border-radius: 15px;
+            border: 1px solid #121f38;
+            background-color: #121f38;
+            color: white;
+            outline: none;
+        }
+
+        .preview button:hover,
+        .preview button:visited {
+            border: 4px solid #262626;
+            background-color: white;
+            color: #266226;
+
+        }
+
+
+
+        @media only screen and (max-width: 600px) {
+
+            .preview button {
+                display: block;
+                margin: 20px auto;
+            }
+
+            .preview {
+
+                width: 100%;
+                margin: 0 auto;
+                box-sizing: border-box;
+
+                text-align: center;
+            }
+
+            .gallery_container {
+
+                margin-bottom: 180px;
+                height: 500px;
+
+            }
+
+            #gallery_display {
+                background-color: #262626;
+                height: 400px;
+                box-sizing: border-box;
+                background-image: url('');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 0.5s linear;
+
+            }
+
+
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="gallery">
+        <div class="gallery_container">
+            <div id="gallery_display">
+
+            </div>
+            <div class="preview">
+                <button onmouseover="changeBackground(ROOM)">
+                    ROOM
+                </button>
+                <button onmouseover="changeBackground(BED)" onclick="changeBackground(BED)">
+                    BED
+                </button>
+                <button onmouseover="changeBackground(BATHROOM)" onclick="changeBackground(BATHROOM)">
+                    BATHROOM
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var ROOM = 'https://cdn.pixabay.com/photo/2018/06/14/21/15/the-interior-of-the-3475656_960_720.jpg';
+        var BED = 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
+        var BATHROOM = 'https://images.pexels.com/photos/930705/pexels-photo-930705.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+
+
+        function changeBackground(element) {
+
+
+            document.getElementById('gallery_display').style.backgroundImage = 'url(' + element + ')';
+
+        }
+        function activeBackground() {
+            document.getElementById('gallery_display').style.backgroundImage = 'url(' + ROOM + ')';
+
+        }
+        activeBackground();
+    </script>
+
+
+</body>
+
+</html>
